@@ -1,0 +1,38 @@
+/*   hadii ll admin page pour ajouter categories*/
+.popup1{
+
+    position:fixed;/* bah tkon bnsba ll body li raho relative */
+    z-index: 999; /*hna bah ykon fo9 kolch*/
+    background-color: rgba(248,248,251,255); 
+    display:none;
+    width: 30%;
+height: 90%;
+/*margin-inline:auto; hadi bah yji fi nos popup */
+left: 40%;
+border: solid 1px;
+border-radius: 5%;
+bottom: 10px;
+}
+.popup2{
+
+    position:fixed;
+    z-index: 999; /*hna bah ykon fo9 kolch*/
+    background-color: rgba(248,248,251,255); 
+    display:none;
+    width: 30%;
+height: 90%;
+/*margin-inline:auto; hadi bah yji fi nos popup */
+left: 40%;
+border: solid 1px;
+border-radius: 5%;
+bottom: 10px;
+}
+.showPopup{display:block;}
+form .input{
+width: auto;
+}
+.des{
+  position: absolute;
+  right: 0;
+  border-radius: 30%;
+}
