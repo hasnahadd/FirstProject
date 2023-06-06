@@ -13,3 +13,4 @@ document.getElementById('orderForm').addEventListener('submit', function(event) 
     document.getElementById('orderForm').classList.add('hidden');
     document.getElementById('confirmationMsg').classList.remove('hidden');
 });
+    
