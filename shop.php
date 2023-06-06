@@ -1,17 +1,7 @@
 <?php
 include "inc/functions.php";
-
-
-
-
 $categories = getAllcategorie();
 $produits = getAllproducts();
-
-
-
-
-
-
 if (!empty($_POST)) //button clicked 
 {
     //echo "button search clicked";
@@ -72,7 +62,7 @@ if (!empty($_POST)) //button clicked
                 </li>
                 <li>
                     <form action="index.php" method="POST">
-                        <input type="text" placeholder="   search.." name="search">
+                        <input type="text" placeholder="  " name="search">
                         <button type="submit" class="sty"><i class="fa fa-search  sty"></i></button>
                     </form>
                 </li>
@@ -83,7 +73,7 @@ if (!empty($_POST)) //button clicked
             </ul>
         </div>
         <div id="mobile">
-            <a href="cart.html"><i class="fa fa-shopping-cart"></i></a>
+            <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
 
         </div>

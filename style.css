@@ -681,7 +681,8 @@ font-size: 13px;
 #cart-add{
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
+justify-content: center;
+
 }
 #coupon{
 width: 50%;
@@ -708,6 +709,9 @@ width: 50%;
 margin-bottom: 30px;
 border: 1px solid #e2e9e1;
 padding:30px;
+flex-direction: column;
+display: flex;
+align-items: center;
 }
 #subtotal table{
 border-collapse: collapse;
@@ -904,12 +908,30 @@ left: 0px;
 
 }
 
-
-
+#cart-empty {
+    background-color: #ffffff;
+    color: #721c24;
+    text-align: center;
+    padding: 50px;
+  }
+  
+  #cart-empty h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  #cart-empty p {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+  
 /*.close1{
 left: -300px;
 
 
 
 }*/
+.hidden{
 
+    display: none;
+}

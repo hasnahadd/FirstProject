@@ -1,9 +1,7 @@
 <?php
 include "inc/functions.php";
-
-
-
-
+//$id_produit = isset($_POST["idproduit"]) ? $_POST["idproduit"] : "";
+//$addtocart = $_POST["addtocart"];
 $categories = getAllcategorie();
 $produits = getAllproducts();
 
@@ -20,13 +18,15 @@ if (!empty($_POST)) //button clicked
 } else {
     $produits = getAllproducts();
 }
+
+
+    
+
+   
+        
+    
+
 ?>
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -111,7 +111,6 @@ if (!empty($_POST)) //button clicked
         </div>
         <div class="single-pro-details">
             <!--<h6>Phone / Samsung</h6>-->
-            <form action="cart.php" method="post">
 
             <h4> <?php echo $produit['nom']   ?> </h4>
             <h2> <?php echo $produit['prix'] ?>dz</h2>
@@ -121,9 +120,10 @@ if (!empty($_POST)) //button clicked
                 <option>A</option>
                 <option>A</option>
             </select>
-                <input type="hidden" value="<?php echo $produit['id']   ?>" name="idproduit">
+            <form action="add_cart.php" method="POST">
+            <input type="hidden" value="<?php echo $produit['id']   ?>" name="idproduit">
             <input type="number" value="1" step="1" name="quantite">
-            <button type="submit" class="normal" >Add To Cart </button>
+            <button type="submit" class="normal" name="addtocart" >Add To Cart </button>
             </form>
             <h4>Products Details</h4>
             <span><?php echo $produit['descrp']   ?>…</span>
