@@ -55,61 +55,62 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `date_creation` date DEFAULT NULL,
   `date_modification` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table testecommerce.categories : ~2 rows (environ)
+-- Listage des données de la table testecommerce.categories : ~4 rows (environ)
 INSERT INTO `categories` (`id`, `nom`, `descrp`, `createur`, `date_creation`, `date_modification`) VALUES
 	(1, 'hasna', 'haddoud manel  ', 2, '2023-03-29', '2023-04-03'),
-	(2, 'zak', ' 7777', 2, '2023-04-02', NULL);
+	(2, 'zak', ' 7777', 2, '2023-04-02', NULL),
+	(90, 'oumnia', ' aaaa a', 2, '2023-04-29', '2023-04-29'),
+	(93, 'fofa', ' aaa', 2, '2023-04-29', NULL);
 
 -- Listage de la structure de table testecommerce. commande
 CREATE TABLE IF NOT EXISTS `commande` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `produits` varchar(50) DEFAULT NULL,
+  `produits` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `quantite` double DEFAULT NULL,
-  `pannier` int DEFAULT NULL,
-  `total` float DEFAULT NULL,
   `date_creation` date DEFAULT NULL,
-  `date_modiffication` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- Listage des données de la table testecommerce.commande : ~0 rows (environ)
-
--- Listage de la structure de table testecommerce. pannier
-CREATE TABLE IF NOT EXISTS `pannier` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `visiteur` int DEFAULT NULL,
+  `nom` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `num` float DEFAULT NULL,
+  `addr` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `wl` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
   `total` float DEFAULT NULL,
-  `date_creation` int DEFAULT NULL,
-  `date_modification` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table testecommerce.pannier : ~0 rows (environ)
+-- Listage des données de la table testecommerce.commande : ~6 rows (environ)
+INSERT INTO `commande` (`id`, `produits`, `quantite`, `date_creation`, `nom`, `email`, `num`, `addr`, `wl`, `total`) VALUES
+	(9, 'M13 TAB', 2, '2023-06-06', 'hasna', 'zak@gmail.com', 2.55556e18, 'ddddddddddddddddddd', '2', NULL),
+	(10, 'M13 TAB', 22, '2023-06-06', 'mimi', 'aaaagm253@gmail.com', 7.77778e23, 'hhhhhhhhhhhhhhhhh', '3', NULL),
+	(11, 'M13 TAB', 22, '2023-06-06', 'mimi', 'aaaagm253@gmail.com', 7.77778e23, 'hhhhhhhhhhhhhhhhh', '3', NULL),
+	(12, 'M13 TAB', 22, '2023-06-06', 'mimi', 'aaaagm253@gmail.com', 7.77778e23, 'hhhhhhhhhhhhhhhhh', '3', NULL),
+	(13, 'Nokia13', 152, '2023-06-06', 'mimi ', 'haddoud@gmail.com', 5.55556e15, 'aaaaaaaaaaaaaaa', '1', NULL),
+	(14, 'oumnia', 2, '2023-06-06', 'mimi ', 'haddoud@gmail.com', 5.55556e15, 'aaaaaaaaaaaaaaa', '1', NULL);
 
 -- Listage de la structure de table testecommerce. produits
 CREATE TABLE IF NOT EXISTS `produits` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `desc` text,
-  `prix` float unsigned DEFAULT NULL,
+  `descrp` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci,
+  `prix` decimal(20,6) unsigned DEFAULT NULL,
   `categories` int DEFAULT NULL,
   `date_creation` date DEFAULT NULL,
-  `date_modification` date DEFAULT NULL,
   `createur` int DEFAULT NULL,
   `img` varchar(255) DEFAULT NULL,
   `marque` varchar(255) DEFAULT NULL,
+  `date_modification` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Listage des données de la table testecommerce.produits : ~5 rows (environ)
-INSERT INTO `produits` (`id`, `nom`, `desc`, `prix`, `categories`, `date_creation`, `date_modification`, `createur`, `img`, `marque`) VALUES
-	(1, 'M13 TAB', 'description ', 15000, NULL, NULL, NULL, NULL, 'tab.jpg', 'Samsung'),
-	(2, 'M13 TAB', 'description', 1200, NULL, NULL, NULL, NULL, 'tab3.jpg', 'Nokia'),
-	(3, 'M12TAT', NULL, 1400, NULL, NULL, NULL, NULL, 'tab1.jpg', 'Samsung'),
-	(4, 'M13tab', NULL, 1100, NULL, NULL, NULL, NULL, 'tab2.jpg', 'Nokia'),
-	(5, 'Nokia13', NULL, 350, NULL, NULL, NULL, NULL, 'tv.jpg', 'nokia');
+-- Listage des données de la table testecommerce.produits : ~6 rows (environ)
+INSERT INTO `produits` (`id`, `nom`, `descrp`, `prix`, `categories`, `date_creation`, `createur`, `img`, `marque`, `date_modification`) VALUES
+	(2, 'M13 TAB', 'hasnaaaaaa ', 1500.000000, 1, NULL, NULL, 'tab3.jpg', 'Nokia', '2023-04-24'),
+	(5, 'Nokia13', 'aaaaaaaaaaa', 350.000000, 1, NULL, NULL, 'tv.jpg', 'samsung', '2023-04-24'),
+	(11, 'hasna', ' zzzzzzz', 2000.000000, 2, '2023-04-24', 2, '271383141_462103708805667_7060284364737608084_n.gif', 'zzzz', NULL),
+	(12, 'd', ' dddd', 3333.000000, 1, '2023-04-24', 2, '271383141_462103708805667_7060284364737608084_n.gif', 'zzzz', NULL),
+	(13, 'oumnia', 'sdsfsdfdsf ', 100.000000, 1, '2023-04-29', 2, 'Capture d’écran (88).png', 'zzzz', '2023-04-29'),
+	(14, 'hasnaa1', ' cxjdcjdhh', 15.000000, 90, '2023-05-08', 2, 'rain-artwork-women-earring-wallpaper-preview.jpg', 'nokia', NULL);
 
 -- Listage de la structure de table testecommerce. stock
 CREATE TABLE IF NOT EXISTS `stock` (
