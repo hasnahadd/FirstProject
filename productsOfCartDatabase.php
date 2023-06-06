@@ -1,6 +1,6 @@
 <?php
 
-include "inc/functions.php";
+include "inc/functions.php"; 
 $conn = cnx();
 
     $ids = implode(',',array_keys($cart));
