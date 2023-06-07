@@ -35,6 +35,8 @@ if (!empty($_POST)) //button clicked
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
     <title>shop</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+
   </head>
 
   <body>
@@ -89,31 +91,27 @@ if (!empty($_POST)) //button clicked
         </ul>
       </div>
       <br>
+
       <div class="pro-container">
-
-        <?php
-        foreach ($produits as $produits) {
-          print '<div class="pro">
- <img src="images/' . $produits['img'] . '" alt="">
- <div class="des">
-<span>' . $produits['nom'] . '</span>
-<h5>' . $produits['marque'] . '</h5>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+  <?php foreach ($produits as $produit) { ?>
+    <a href="sproduct.php?id=<?php echo $produit['id']; ?>" class="pro">
+      <img src="images/<?php echo $produit['img']; ?>" alt="">
+      <div class="des">
+        <span><?php echo $produit['nom']; ?></span>
+        <h5><?php echo $produit['marque']; ?></h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4><?php echo $produit['prix']; ?></h4>
+      </div>
+      <i id="addItemIcon" name="addtocartindex" class="fas fa-plus-circle"></i>
+    </a>
+  <?php } ?>
 </div>
-<h4>' . $produits['prix'] . '</h4>
-</div>
-<i class="fal fa-shopping-cart cart"  ></i>
-<a href="sproduct.php?id=' . $produits['id'] . '"><i id="addItemIcon" class="fas fa-plus-circle "></i> <!-- Add item icon --></i>
-</a>
-</div>';
-        }
-        ?>
-
 
 
 

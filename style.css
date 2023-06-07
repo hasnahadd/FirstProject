@@ -296,8 +296,11 @@ width: 100%;
 border-radius: 20px;
 
 }
+.pro-container a {
+    text-decoration: none; /* Remove underline */
+  }
 .pro:hover{
-    background-color: rgb(232, 220, 220);
+    background-color: rgb(224, 220, 220);
     }
 #products1 .pro .des h5{
 padding-top:7px;

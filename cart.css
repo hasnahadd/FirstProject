@@ -1,0 +1,33 @@
+#cartIcon {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  #addItemIcon {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    font-size: 1.5rem;
+    color: rgb(159, 112, 112);
+  }
+  
+  #cartSidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    transition: right 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+  }
+  
+  #cartContent {
+    padding: 20px;
+  }
+  
+  #cartSidebar.show {
+    right: 0;
+  }
+  

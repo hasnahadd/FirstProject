@@ -33,7 +33,6 @@ if (!empty($_POST)) //button clicked
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" />
@@ -42,12 +41,17 @@ if (!empty($_POST)) //button clicked
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="cart.css">
+
     <title>products</title>
 </head>
 
 <body>
 
     <script defer src="scripts.js"></script>
+    <script defer src="cart.js"></script>
 
 
     <section class="header">
@@ -108,9 +112,6 @@ if (!empty($_POST)) //button clicked
 
             <h4> <?php echo $produit['nom']   ?> </h4>
             <h2> <?php echo $produit['prix'] ?>dz</h2>
-            <select>
-                
-            </select>
             <form action="add_cart.php" method="POST">
             <input type="hidden" value="<?php echo $produit['id']   ?>" name="idproduit">
             <input type="number" value="1" step="1" name="quantite">
@@ -135,28 +136,47 @@ if (!empty($_POST)) //button clicked
         <h2>Our Products</h2>
         <P></P>
         <div class="pro-container">
-            <?php
-            foreach ($produits as $produits) {
-                print '<div class="pro">
- <img src="images/' . $produits['img'] . '" alt="">
- <div class="des">
-<span>' . $produits['nom'] . '</span>
-<h5>' . $produits['marque'] . '</h5>
-<div class="star">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+  <?php foreach ($produits as $produit) { ?>
+    <a href="sproduct.php?id=<?php echo $produit['id']; ?>" class="pro">
+      <img src="images/<?php echo $produit['img']; ?>" alt="">
+      <div class="des">
+        <span><?php echo $produit['nom']; ?></span>
+        <h5><?php echo $produit['marque']; ?></h5>
+        <div class="star">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h4><?php echo $produit['prix']; ?></h4>
+      </div>
+      <i id="addItemIcon" name="addtocartindex" class="fas fa-plus-circle"></i>
+    </a>
+  <?php } ?>
 </div>
-<h4>' . $produits['prix'] . '</h4>
-</div>
-<i class="fal fa-shopping-cart cart"  ></i>
-<a href="sproduct.php?id=' . $produits['id'] . '"><i id="addItemIcon" class="fas fa-plus-circle "></i> <!-- Add item icon --></i>
-</a></div>';
-            }
-            ?>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section class="footer">
         <div class="social ">

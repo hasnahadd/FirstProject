@@ -1,6 +1,6 @@
 <?php
 if (
-  isset($_POST['addtocart']) &&
+  isset($_POST['addtocart']) && isset($_POST['addtocartindex'])&&
   isset($_POST['idproduit']) &&
   isset($_POST['quantite'])
 ) {
