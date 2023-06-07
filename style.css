@@ -3,6 +3,7 @@
   --color-old:rgb(8, 129, 120);
   --color-primary:#373c41;
   --color-text-primary:white;
+  --color-border-products: #a4b7c9
 }
 * {
 
@@ -344,8 +345,8 @@ right: 10px;
 }
 #products1 .pro-container{
   /* liste produit */
-  border-bottom: 1px solid var(--color-primary);
-  box-shadow: 0px 1px 5px 0px var(--color-primary);
+  border-bottom: 1px solid var(--color-border-products);
+  box-shadow: 1px 1px 1px var(--color-border-products);
   height:900px ;
   overflow-y: scroll;
   scroll-behavior: smooth;
