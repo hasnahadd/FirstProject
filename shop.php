@@ -107,7 +107,9 @@ if (!empty($_POST)) //button clicked
 </div>
 <h4>' . $produits['prix'] . '</h4>
 </div>
-<a href="sproduct.php?id=' . $produits['id'] . '"><i class="fal fa-shopping-cart cart"  ></i> </a>
+<i class="fal fa-shopping-cart cart"  ></i>
+<a href="sproduct.php?id=' . $produits['id'] . '"><i id="addItemIcon" class="fas fa-plus-circle "></i> <!-- Add item icon --></i>
+</a>
 </div>';
         }
         ?>

@@ -51,37 +51,31 @@ if (!empty($_POST)) //button clicked
 
 
     <section class="header">
-        <a href="#"> <img src="" class="logo" alt=""></a>
-        <div>
-            <ul class="menu inactive" id="navbar" class="close1">
-                <li><a href="index.php">Home</a> </li>
-                <li><a href="shop.php" class="active">Shop</a> </li>
-                <li><a href="contact.php">Contact </a> </li>
+    <a href="#"> <img src="" class="logo" alt="logo"></a>
+    <div>
+      <ul class="menu inactive" id="navbar" class="close1">
+        <li><a href="index.php">Home</a> </li>
+        <li><a href="shop.php" class="active">Shop</a> </li>
+        <li><a href="contact.php">Contact </a> </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="container-fluid">
-                        Categorie
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php
-                        foreach ($categories as $categories) {
-                            print '<li><a class="dropdown-item" href="#">' . $categories['nom'] . '</a></li>';
-                        }
-                        ?>
-                    </ul>
-                </li>
-                <li><a href="cart.html"><i class="fa fa-search"></i></i></a></li>
-                <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i></a></li>
-                <!--<a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>-->
-            </ul>
-            </ul>
-        </div>
-        <div id="mobile">
-            <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
+        <li>
+          <form action="index.php" method="POST">
+            <input type="text" placeholder="  " name="search">
+            <button type="submit" class="sty"><i class="fa fa-search  sty"></i></button>
+          </form>
+        </li>
 
-        </div>
-    </section>
+        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i></a></li>
+        <!--<a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>-->
+      </ul>
+      </ul>
+    </div>
+    <div id="mobile">
+      <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
+      <i id="bar" class="fas fa-outdent"></i>
+
+    </div>
+  </section>
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
             <img src="images/tab.jpg" width="100%" id="MainImg" alt="">
@@ -115,10 +109,7 @@ if (!empty($_POST)) //button clicked
             <h4> <?php echo $produit['nom']   ?> </h4>
             <h2> <?php echo $produit['prix'] ?>dz</h2>
             <select>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
-                <option>A</option>
+                
             </select>
             <form action="add_cart.php" method="POST">
             <input type="hidden" value="<?php echo $produit['id']   ?>" name="idproduit">
@@ -160,8 +151,9 @@ if (!empty($_POST)) //button clicked
 </div>
 <h4>' . $produits['prix'] . '</h4>
 </div>
-<a href="sproduct.php?id=' . $produits['id'] . '"><i class="fal fa-shopping-cart cart"  ></i> </a>
-</div>';
+<i class="fal fa-shopping-cart cart"  ></i>
+<a href="sproduct.php?id=' . $produits['id'] . '"><i id="addItemIcon" class="fas fa-plus-circle "></i> <!-- Add item icon --></i>
+</a></div>';
             }
             ?>
     </section>

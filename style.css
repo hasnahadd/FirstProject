@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 :root{
   --color-old:rgb(8, 129, 120);
-  --color-primary:#1d242a;
+  --color-primary:#373c41;
   --color-text-primary:white;
 }
 * {
@@ -297,8 +297,8 @@ border-radius: 20px;
 
 }
 .pro:hover{
-background-color: rgb(249, 235, 235);
-}
+    background-color: rgb(232, 220, 220);
+    }
 #products1 .pro .des h5{
 padding-top:7px;
 color: #1a1a1a;
@@ -343,13 +343,24 @@ right: 10px;
   /* liste produit */
   border-bottom: 1px solid var(--color-primary);
   box-shadow: 0px 1px 5px 0px var(--color-primary);
-  height:500px ;
+  height:900px ;
   overflow-y: scroll;
   scroll-behavior: smooth;
 display: flex;
 justify-content:space-evenly;
 padding-top: 20px;
 flex-wrap: wrap;
+}
+#addItemIcon{
+position: absolute;
+bottom: 20px;
+right: 60px;
+background-color: #e8f6ea;
+border-radius: 50px;
+border: 1px solid #cce7d0;
+line-height: 40px;
+width: 40px;
+height: 40px;
 }
 #newsletter{
 display: flex;
@@ -505,6 +516,20 @@ justify-content: center;
 text-align: center;
 flex-direction: column;
 padding: 14px;
+margin-top: 10px;
+
+}
+#page-headerindex{
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 14px;
+margin-top: 10px;
+
 }
 #page-header h2, #page-header p {
 color:#fff;
