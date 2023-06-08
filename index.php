@@ -49,7 +49,7 @@ if (!empty($_POST)) //button clicked
 <body>
 
   <script defer src="scripts.js"></script>
-  <script defer src="cart.js"></script>
+  <script defer src="addToCart.js"></script>
 
 
   <section class="header">
@@ -211,8 +211,9 @@ if (!empty($_POST)) //button clicked
 
     <div class="pro-container">
   <?php foreach ($produits as $produit) { ?>
-    <a href="sproduct.php?id=<?php echo $produit['id']; ?>" class="pro">
-      <img src="images/<?php echo $produit['img']; ?>" alt="">
+    <div class="pro">
+      <a href="sproduct.php?id=<?php echo $produit['id']; ?>">
+        <img src="images/<?php echo $produit['img']; ?>" alt="">
       <div class="des">
         <span><?php echo $produit['nom']; ?></span>
         <h5><?php echo $produit['marque']; ?></h5>
@@ -226,7 +227,10 @@ if (!empty($_POST)) //button clicked
         <h4><?php echo $produit['prix']; ?></h4>
       </div>
       <i id="addItemIcon" name="addtocartindex" class="fas fa-plus-circle"></i>
-    </a>
+      </a>
+      <button  class="addToCartBtn" data-id="<?= $produit['id'] ?>">add to cart</button>
+
+    </div>
   <?php } ?>
 </div>
 

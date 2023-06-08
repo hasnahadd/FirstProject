@@ -5,9 +5,7 @@ require_once('Prod.php');
   $id = $_GET['id'];
     try {
     Cart::delete($id, $cart);
-   // var_dump($cart);
-    // die();
-    //dd($cart);
+    
     header('Location: cart.php');
     } catch (Throwable $error) {
     echo "something went wrong $error. ";

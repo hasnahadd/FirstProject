@@ -1,6 +1,6 @@
 <?php
 if (
-  isset($_POST['addtocart']) && isset($_POST['addtocartindex'])&&
+  isset($_POST['addtocart']) &&
   isset($_POST['idproduit']) &&
   isset($_POST['quantite'])
 ) {
@@ -21,7 +21,7 @@ if (
 
   }
 
-  setcookie('cart', json_encode($cart), time() + 3600);
+  setrawcookie('cart', json_encode($cart), time() + 3600);
 
 
 } else {
