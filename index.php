@@ -1,17 +1,7 @@
 <?php
 include "inc/functions.php";
-
-
-
-
 $categories = getAllcategorie();
 $produits = getAllproducts();
-
-
-
-
-
-
 if (!empty($_POST)) //button clicked 
 {
   //echo "button search clicked";
@@ -19,9 +9,7 @@ if (!empty($_POST)) //button clicked
   $produits = searchProduits($_POST['search']);
 } else {
   $produits = getAllproducts();
-
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,32 +40,12 @@ if (!empty($_POST)) //button clicked
   <script defer src="addDeleteCart.js"></script>
 
 
-  <section class="header">
-    <a href="#"> <img src="" class="logo" alt="logo"></a>
-    <div>
-      <ul class="menu inactive" id="navbar" class="close1">
-        <li><a href="index.php">Home</a> </li>
-        <li><a href="shop.php" class="active">Shop</a> </li>
-        <li><a href="contact.php">Contact </a> </li>
-
-        <li>
-          <form action="index.php" method="POST">
-            <input type="text" placeholder="  " name="search">
-            <button type="submit" class="sty"><i class="fa fa-search  sty"></i></button>
-          </form>
-        </li>
-
-        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cartIcon"></span></a></li>
-        <!--<a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>-->
-      </ul>
-      </ul>
-    </div>
-    <div id="mobile">
-      <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
-      <i id="bar" class="fas fa-outdent"></i>
-
-    </div>
-  </section>
+  <?php
+  
+  require_once('header/header.php')
+  
+  
+  ?>
   <section style="padding:0; flex-direction:row;justify-content: stretch;" id="page-headerindex">
     <section style="width:100%;height:100%;" class="container">
       <div style="width:100%;height:100%;" class="swiper">
@@ -189,88 +157,16 @@ if (!empty($_POST)) //button clicked
     </div>
   </section>
 
-  <section id="products1" class="section-p1">
-    <div class="ourProdContainer">
-      <h2 class="ourProducts">Our Products</h2>
+  <?php
+  
+  require_once('products/products.php')
+  
+  
+  ?>
 
-    </div>
-    <div class="nav-item dropdown">
-      <a id="mosiba" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-        aria-expanded="false" class="container-fluid">
-        Categorie
-      </a>
-      <ul class="dropdown-menu">
-        <?php
-          foreach ($categories as $categories) {
-            print '<li><a class="dropdown-item" href="#">' . $categories['nom'] . '</a></li>';
-          }
-          ?>
-      </ul>
-    </div>
-    <br>
-
-    <div class="pro-container">
-  <?php foreach ($produits as $produit) { ?>
-    <div class="pro">
-      <a href="sproduct.php?id=<?php echo $produit['id']; ?>">
-        <img src="images/<?php echo $produit['img']; ?>" alt="">
-      <div class="des">
-        <span><?php echo $produit['nom']; ?></span>
-        <h5><?php echo $produit['marque']; ?></h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4><?php echo $produit['prix']; ?></h4>
-      </div>
-      <i id="addItemIcon" name="addtocartindex" class="fas fa-plus-circle"></i>
-      </a>
-      <button  class="addToCartBtn" data-id="<?= $produit['id'] ?>">add to cart</button>
-
-    </div>
-  <?php } ?>
-</div>
-
-
-
-  </section>
-
-
-  <section class="footer">
-    <div class="social ">
-      <a href="" class="cr"><i class="fab fa-instagram"></i></a>
-      <a href="" class="cr"><i class="fab fa-facebook-f"></i></a>
-      <a href="" class="cr"><i class="fab fa-youtube"></i></a>
-      <ul>
-        <li>
-          <a href="#">Home</a>
-
-        </li>
-
-        <li>
-          <a href="#">Shop</a>
-
-        </li>
-        <li>
-          <a href="#">About</a>
-
-        </li>
-        <li>
-          <a href="#">Contact</a>
-
-        </li>
-      </ul>
-
-      <p class="copyright">
-        Gloden Services @ 2022
-
-      </p>
-    </div>
-
-  </section>
+  <?php
+require_once('footer/footer.php')
+?>
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 </body>
