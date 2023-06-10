@@ -18,6 +18,7 @@
   
   <title>shop</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="addDeleteCart.js"></script>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
           </form>
         </li>
 
-        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i></a></li>
+        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cartIcon"></span></a></li>
         <!--<a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>-->
       </ul>
       </ul>
@@ -74,7 +75,7 @@
               ?>
 
         <tr>
-          <td><a href="<?= 'delete_cart.php?id=' . $produit['id'] ?>"><i class="far fa-times-circle"></i></a></td>
+          <td><button data-id="<?= $produit['id'] ?>" class="deleteFromCartBtn" >delete</button></td>
           <td><img src="images/<?= $produit['img'] ?>" alt="Product Image"></td>
           <td>
             <?= $produit['nom'] ?>

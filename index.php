@@ -49,7 +49,7 @@ if (!empty($_POST)) //button clicked
 <body>
 
   <script defer src="scripts.js"></script>
-  <script defer src="addToCart.js"></script>
+  <script defer src="addDeleteCart.js"></script>
 
 
   <section class="header">
@@ -67,7 +67,7 @@ if (!empty($_POST)) //button clicked
           </form>
         </li>
 
-        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i></a></li>
+        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cartIcon"></span></a></li>
         <!--<a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>-->
       </ul>
       </ul>

@@ -5,6 +5,13 @@
   --color-text-primary:white;
   --color-border-products: #a4b7c9
 }
+#cartIcon{
+  /* cart nombre de produit sur Icon */
+  background-color: darkred;
+  padding: 0px 3px;
+  border-radius: 50%;
+  font-size: 14px;
+}
 * {
 
 margin: 0;
