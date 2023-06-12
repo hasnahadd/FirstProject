@@ -25,13 +25,13 @@ $categories = getAllcategorie();
     <br>
 
     <div class="pro-container">
-  <?php foreach ($produits as $produit) { ?>
+  <?php foreach ($produits as $produits) { ?>
     <div class="pro">
-      <a href="sproduct.php?id=<?php echo $produit['id']; ?>">
-        <img src="images/<?php echo $produit['img']; ?>" alt="">
+      <a href="sproduct.php?id=<?php echo $produits['id']; ?>">
+        <img src="images/<?php echo $produits['img']; ?>" alt="">
       <div class="des">
-        <span><?php echo $produit['nom']; ?></span>
-        <h5><?php echo $produit['marque']; ?></h5>
+        <span><?php echo $produits['nom']; ?></span>
+        <h5><?php echo $produits['marque']; ?></h5>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -39,11 +39,11 @@ $categories = getAllcategorie();
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
         </div>
-        <h4><?php echo $produit['prix']; ?></h4>
+        <h4><?php echo $produits['prix']; ?></h4>
       </div>
       <i id="addItemIcon" name="addtocartindex" class="fas fa-heart"></i>
       </a>
-      <button  class="addToCartBtn normal" data-id="<?= $produit['id'] ?>">add to cart</button>
+      <button  class="addToCartBtn normal" data-id="<?= $produits['id'] ?>">add to cart</button>
 
     </div>
   <?php } ?>

@@ -1,3 +1,17 @@
+<?php
+require_once('inc/functions.php');
+$produits = getAllproducts();
+$categories = getAllcategorie();
+if (!empty($_POST)) //button clicked 
+{
+//echo $_POST['search'] ;
+  $produits = searchProduits($_POST['search']);
+} else {
+  $produits = getAllproducts();
+}
+
+
+?>
 <section class="header">
     <a href="#"> <img src="" class="logo" alt="logo"></a>
     <div>
@@ -13,13 +27,12 @@
           </form>
         </li>
 
-        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cartIcon"></span></a></li>
-        <!--<a href="#" id="close"><i class="fa fa-window-close" aria-hidden="true"></i></a>-->
+        <li id="lg-bag"><a href="cart.php"><i class="fa fa-shopping-cart"></i><span class="cartIcon"></span></a></li>
       </ul>
       </ul>
     </div>
-    <div id="mobile">
-      <a href="cart.php"><i class="fa fa-shopping-cart"></i></a>
+    <div id="mobile" >
+      <a href="cart.php"><i class="fa fa-shopping-cart" style="color:white; text-decoration= none;"></i><span id="cartIconM"></span></a>
       <i id="bar" class="fas fa-outdent"></i>
 
     </div>

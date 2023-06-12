@@ -1,6 +1,8 @@
 const addToCartBtn = document.querySelectorAll('.addToCartBtn');
 const deleteFromCartBtn = document.querySelectorAll('.deleteFromCartBtn');
-const cartIcon = document.querySelector('#cartIcon');
+const cartIcon = document.querySelector('.cartIcon');
+const cartIconM = document.querySelector('#cartIconM');
+
 updateCartNum();
 function addToCart(e) {
   let id = e.target.dataset.id;
@@ -34,8 +36,14 @@ function updateCartNum() {
   if (number) {
     cartIcon.style.display = 'inline';
       cartIcon.textContent = number;
+
+      cartIconM.style.display='inline';
+      cartIconM.textContent = number;
+
     } else {
       cartIcon.style.display = 'none';
+      cartIconM.style.display = 'none';
+
     }
 
 }
