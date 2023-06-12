@@ -10,7 +10,7 @@ function addToCart(e) {
   };
   if (Object.keys(cart).length) {
     document.cookie =
-    `cart=${JSON.stringify({ ...item, ...cart })}`;
+    `cart=${JSON.stringify({ ...item, ...cart })}`;//frgha
   } else {
     document.cookie = `cart=${JSON.stringify(item)}`;
   }

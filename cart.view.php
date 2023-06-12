@@ -51,7 +51,7 @@ require_once('header/header.php')
               ?>
 
         <tr>
-          <td><button data-id="<?= $produit['id'] ?>" class="deleteFromCartBtn normal" >delete</button></td>
+          <td><button data-id="<?= $produit['id'] ?>" class="deleteFromCartBtn normal" >Remove</button></td>
           <td><img src="images/<?= $produit['img'] ?>" alt="Product Image"></td>
           <td>
             <?= $produit['nom'] ?>

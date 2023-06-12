@@ -41,9 +41,9 @@ $categories = getAllcategorie();
         </div>
         <h4><?php echo $produit['prix']; ?></h4>
       </div>
-      <i id="addItemIcon" name="addtocartindex" class="fas fa-plus-circle"></i>
+      <i id="addItemIcon" name="addtocartindex" class="fas fa-heart"></i>
       </a>
-      <button  class="addToCartBtn" data-id="<?= $produit['id'] ?>">add to cart</button>
+      <button  class="addToCartBtn normal" data-id="<?= $produit['id'] ?>">add to cart</button>
 
     </div>
   <?php } ?>
