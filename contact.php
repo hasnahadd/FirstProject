@@ -51,6 +51,8 @@ $categories = $resultat ->fetchAll();
 
 <body>
   <script defer src="scripts.js"></script>
+  <script defer src="addDeleteCart.js"></script>
+
   <?php
   
   require_once('header/header.php')
