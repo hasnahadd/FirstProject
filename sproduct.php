@@ -101,7 +101,7 @@ if (!empty($_POST)) //button clicked
             </h2>
             <form action="add_cart.php" method="POST">
                 <input type="hidden" value="<?php echo $produit['id']   ?>" name="idproduit">
-                <input type="number" value="1" step="1" name="quantite">
+                <input class='quantity-input' type="number" value="1" step="1" name="quantite">
                 <button  class="addToCartBtn normal" data-id="<?= $produit['id'] ?>">add to cart</button>
 
             </form>
