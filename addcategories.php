@@ -284,6 +284,7 @@ categories supprimer avec success
 
   <?php else : ?>
     <h1>405 need authentification</h1>
+
   <?php endif; ?>
 </body>
 

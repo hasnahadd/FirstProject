@@ -24,6 +24,8 @@ include "inc/functions.php";
    $_SESSION['nom'] =  $user['nom'];
     $_SESSION['pass'] =  $user['pass'];
   }
+  header('location:addcategories.php');
+
 }
 ?>
 <!DOCTYPE html>

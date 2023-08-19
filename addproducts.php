@@ -207,7 +207,7 @@ $produits = getAllproducts();
 
                 print '<div class="alert alert-success">
   produits ajouter avec success
-  </div>';
+  </div>'; 
               }
             ?>
 

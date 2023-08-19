@@ -26,6 +26,7 @@ $requtte = "UPDATE categories SET nom='$nom', descrp='$descrp' , date_modificati
 //execution
  $resultat = $conn->query($requtte);
  if($resultat){   //ida ajoutit fi la base adini tableau hdk categories li fi list.php
-header('location:list.php?ajout=ok');
+  header('location:addcategories.php?ajout=ok');
+
  }
 ?>
