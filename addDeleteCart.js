@@ -1,58 +1,56 @@
-const addToCartBtn = document.querySelectorAll('.addToCartBtn');
-const deleteFromCartBtn = document.querySelectorAll('.deleteFromCartBtn');
-const cartIcon = document.querySelector('.cartIcon');
-const cartIconM = document.querySelector('#cartIconM');
+const addToCartBtn = document.querySelectorAll(".addToCartBtn");
+const deleteFromCartBtn = document.querySelectorAll(".deleteFromCartBtn");
+const cartIcon = document.querySelector(".cartIcon");
+const cartIconM = document.querySelector("#cartIconM");
 
 updateCartNum();
 function addToCart(e) {
   let id = e.target.dataset.id;
-  let cart = getCookie('cart');
+  let cart = getCookie("cart");
+  let qty = getQty(e.target);
+  
   let item = {
-    [id] : "1"
+    [id]: qty,
   };
   if (Object.keys(cart).length) {
-    document.cookie =
-    `cart=${JSON.stringify({ ...item, ...cart })}`;//frgha
+    document.cookie = `cart=${JSON.stringify({ ...cart,...item })}`; //frgha
   } else {
     document.cookie = `cart=${JSON.stringify(item)}`;
   }
   updateCartNum();
 }
 function removeFromCart(e) {
-  let confirmation = confirm('are you sure you want to delete this item ?');
+  let confirmation = confirm("are you sure you want to delete this item ?");
   if (confirmation) {
-    let cart = getCookie('cart');
+    let cart = getCookie("cart");
     let id = e.target.dataset.id;
     delete cart[id];
-      document.cookie = `cart=${JSON.stringify(cart)}`;
-      location.reload();
+    document.cookie = `cart=${JSON.stringify(cart)}`;
+    location.reload();
   }
   updateCartNum();
 }
 
 function updateCartNum() {
-  let cart = getCookie('cart');
-    let number = Object.keys(cart).length;
+  let cart = getCookie("cart");
+  let number = Object.keys(cart).length;
   if (number) {
-    cartIcon.style.display = 'inline';
-      cartIcon.textContent = number;
+    cartIcon.style.display = "inline";
+    cartIcon.textContent = number;
 
-      cartIconM.style.display='inline';
-      cartIconM.textContent = number;
-
-    } else {
-      cartIcon.style.display = 'none';
-      cartIconM.style.display = 'none';
-
-    }
-
+    cartIconM.style.display = "inline";
+    cartIconM.textContent = number;
+  } else {
+    cartIcon.style.display = "none";
+    cartIconM.style.display = "none";
+  }
 }
 
-addToCartBtn.forEach(btn => {
-  btn.addEventListener('click', addToCart);
+addToCartBtn.forEach((btn) => {
+  btn.addEventListener("click", addToCart);
 });
-deleteFromCartBtn.forEach(btn => {
-  btn.addEventListener('click', removeFromCart);
+deleteFromCartBtn.forEach((btn) => {
+  btn.addEventListener("click", removeFromCart);
 });
 
 function getCookie(cart) {
@@ -64,6 +62,16 @@ function getCookie(cart) {
     }
   }
   return [];
+}
+
+function getQty(element) {
+  if (element && element.parentElement) {
+    let input = element.parentElement.querySelector("input.quantity-input");
+    if (input && input.value) {
+      return input.value;
+    }
+  }
+  return 1;
 }
 
 // function setCookie(cname, cvalue, exdays) {
